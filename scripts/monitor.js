@@ -1,36 +1,62 @@
+#!/usr/bin/env node
+
 /**
- * System Monitoring Script - Production
- * Monitors application health and performance
+ * DevOps Simulator – Monitoring Script
+ * Supports both Production and Development environments.
  */
 
-const monitorConfig = {
-  interval: 60000, // 1 minute
-  alertThreshold: 80,
-  metricsEndpoint: 'http://localhost:8080/metrics'
-};
+const fs = require("fs");
+const os = require("os");
+const path = require("path");
 
-console.log('=================================');
-console.log('DevOps Simulator - Monitor v1.0');
-console.log('=================================');
+const ENV = process.env.NODE_ENV || "development";
+const LOG_FILE =
+  ENV === "production"
+    ? "/var/log/devops-monitor.log"
+    : path.join(__dirname, "../logs/devops-monitor-dev.log");
 
-function checkSystemHealth() {
-  console.log(`[${new Date().toISOString()}] Checking system health...`);
-  
-  // Check CPU usage
-  console.log('✓ CPU usage: Normal');
-  
-  // Check Memory
-  console.log('✓ Memory usage: Normal');
-  
-  // Check Disk
-  console.log('✓ Disk space: Adequate');
-  
-  console.log('System Status: HEALTHY');
+console.log("======================================");
+console.log(" DevOps Simulator – Monitoring Script ");
+console.log("======================================");
+console.log(`Environment: ${ENV}`);
+console.log(`Logging to: ${LOG_FILE}`);
+console.log("--------------------------------------");
+
+// Utility: Write logs with timestamp
+function log(message) {
+  const timestamp = new Date().toISOString();
+  const line = `[${timestamp}] ${message}\n`;
+  fs.appendFileSync(LOG_FILE, line);
+  console.log(line.trim());
 }
 
-// Start monitoring
-console.log(`Monitoring every ${monitorConfig.interval}ms`);
-setInterval(checkSystemHealth, monitorConfig.interval);
+// Simulate system metrics
+function getSystemStats() {
+  return {
+    cpuLoad: os.loadavg()[0].toFixed(2),
+    memoryUsage: ((os.totalmem() - os.freemem()) / os.totalmem() * 100).toFixed(2) + "%",
+    uptime: `${(os.uptime() / 60).toFixed(1)} min`,
+  };
+}
 
-// Run first check immediately
-checkSystemHealth();
+// Monitor function
+function monitor() {
+  const stats = getSystemStats();
+  log(`CPU Load: ${stats.cpuLoad}`);
+  log(`Memory Usage: ${stats.memoryUsage}`);
+  log(`Uptime: ${stats.uptime}`);
+
+  if (ENV === "production") {
+    log("Performing production health check...");
+    // Example: check if critical services are up
+  } else {
+    log("Development mode: verbose debug logging enabled.");
+  }
+
+  log("--------------------------------------");
+}
+
+// Run monitor periodically
+setInterval(monitor, 10000); // every 10 seconds
+
+log("✅ DevOps Simulator Monitoring started successfully!");
