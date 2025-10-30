@@ -27,3 +27,6 @@ Thumbs.db
 *.swp
 logs/
 node_modules/
+
+checkpoints/
+*.zip
