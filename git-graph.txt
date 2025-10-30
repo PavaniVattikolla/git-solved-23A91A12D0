@@ -1,0 +1,20 @@
+* 76ae4fd (HEAD -> main, tag: v1.0, tag: final, origin/main, origin/HEAD) Updated README after final merge
+* 08bcd9d Add .gitignore to ignore node_modules folder
+*   8f1f297 Resolved .gitignore merge conflict - unified from main and conflict-simulator
+|\  
+| * ffa8728 Add .gitignore to ignore node_modules folder
+| * d3dd9b2 (instructor/conflict-simulator) updating conflict-simulator
+* | c56a62e Add package-lock.json for dependency tracking
+* | 7d560f6 Resolved README.md conflict with production version
+* | 983ff39 Resolved monitor.js conflicts and merged environments
+* | cfe9a8b Fixed deploy.sh and resolved merge conflicts
+* | bfbbdcc Resolved deploy.sh merge conflict
+* | a73001f Resolved database-config.json merge conflict
+* |   67b68f8 Resolved all merge conflicts and merged branches successfully
+|\ \  
+| * | 02011a5 (origin/dev, instructor/dev) updating dev
+| |/  
+* | 0312c6f (instructor/main, instructor/HEAD) updating main
+* | fadfd24 Revise README for DevOps Simulator project
+|/  
+* ae630eb Initial commit

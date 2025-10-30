@@ -1,0 +1,2 @@
+final           Final project submission
+v1.0            First release after resolving all conflicts
