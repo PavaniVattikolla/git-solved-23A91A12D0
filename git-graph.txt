@@ -1,4 +1,9 @@
-* 76ae4fd (HEAD -> main, tag: v1.0, tag: final, origin/main, origin/HEAD) Updated README after final merge
+* 6565e74 (HEAD -> main) Revert "demo revert commit"
+* e043532 demo revert commit
+* 2ef3ae2 demo reset commit after soft reset
+* 9fc0aef rebase demo commit
+* a4a9130 (origin/main, origin/HEAD) Added final project documentation and logs
+* 76ae4fd (tag: v1.0, tag: final) Updated README after final merge
 * 08bcd9d Add .gitignore to ignore node_modules folder
 *   8f1f297 Resolved .gitignore merge conflict - unified from main and conflict-simulator
 |\  

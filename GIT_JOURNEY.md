@@ -1,8 +1,4 @@
-# My Git Journey
-
-- Learned Git branching, merging, and resolving conflicts.
-- Practiced cherry-picking, tagging, and remote management.
-- Final repository contains 16 commits and 2 release tags (v1.0, final).
-- Conflicts resolved successfully and main branch is clean.
-
-
+# GIT_JOURNEY
+- Resolved conflicts: README.md, config/*, scripts/deploy.sh, scripts/monitor.js, .gitignore
+- Commands used: fetch, pull, merge, cherry-pick, rebase, reset, revert, stash, tag
+- Artifacts: branches.txt, git-graph.txt, tags.txt, remotes.txt
