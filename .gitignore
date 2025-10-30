@@ -28,5 +28,6 @@ Thumbs.db
 logs/
 node_modules/
 
-checkpoints/
-*.zip
+# Allow checkpoints and zip files to be tracked
+# checkpoints/
+# *.zip
