@@ -43,3 +43,5 @@ environments:
       predictive_scaling: true
       anomaly_detection: true
       auto_optimization: true
+      feature_flag: true
+
